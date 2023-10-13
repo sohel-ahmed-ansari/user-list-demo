@@ -1,0 +1,26 @@
+@use '../../styles/colors.scss' as colors;
+
+.user-list {
+  list-style-type: none;
+  padding: 0px 16px;
+  margin: 0;
+}
+
+.user-list-item {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  border-bottom: 1px solid colors.$light-grey;
+  &__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    margin-right: 16px;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

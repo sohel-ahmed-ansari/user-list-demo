@@ -1,0 +1,53 @@
+@use '../../styles/colors.scss' as colors;
+
+$spinner-size: 16px;
+
+.preloader {
+  width: 100vw;
+  height: 100vh;
+  background-color: colors.$white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  &__spinner {
+    width: $spinner-size;
+    height: $spinner-size;
+    border-radius: 50%;
+    background-color: colors.$lime-green;
+    position: relative;
+
+    //for creating ripple effect
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: $spinner-size;
+      height: $spinner-size;
+      border-radius: 50%;
+      background-color: colors.$lime-green;
+      animation: ripple 3s infinite;
+      position: absolute;
+    }
+
+    //second ripple starts after some delay
+    &::after {
+      animation-delay: 1.5s;
+    }
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(5);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(8);
+    opacity: 0;
+  }
+}
