@@ -26,6 +26,18 @@ describe('UserList', () => {
     expect(userElements).toHaveLength(users.length)
   })
 
+  it('renders user names correctly', () => {
+    render(<UserList users={users} className="test-class" />)
+    expect(screen.getByText('John Doe')).toBeInTheDocument()
+    expect(screen.getByText('Jane Doe')).toBeInTheDocument()
+  })
+
+  it('renders avatar alt text correctly', () => {
+    render(<UserList users={users} className="test-class" />)
+    expect(screen.getByAltText('John Doe')).toBeInTheDocument()
+    expect(screen.getByAltText('Jane Doe')).toBeInTheDocument()
+  })
+
   it('calls onScrollToBottom when the list is scrolled to the bottom', () => {
     const onScrollToBottom = jest.fn()
     render(<UserList users={users} onScrollToBottom={onScrollToBottom} />)
