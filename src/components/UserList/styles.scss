@@ -31,3 +31,42 @@
     color: colors.$dark-grey;
   }
 }
+
+.loading-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+}
+
+.loading-item__dot {
+  animation: loading ease-in-out 1s infinite;
+  background-color: colors.$lime-green;
+  height: 16px;
+  width: 16px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.loading-item__dot:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-item__dot:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes loading {
+  0% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.7);
+    opacity: 0.5;
+  }
+}

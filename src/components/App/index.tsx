@@ -31,7 +31,7 @@ function App() {
     <div className="app">
       <Header title="Users" />
       <Main>
-        <UserListPage onPageLoaded={() => setIsPageLoaded(true)} />
+        <UserListPage onPageLoaded={() => setIsPageLoaded(true)} className="page" />
       </Main>
       {isAppLoading && <Preloader />}
     </div>
