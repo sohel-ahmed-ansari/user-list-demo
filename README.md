@@ -1,6 +1,17 @@
-# Getting Started with Create React App
+# User list demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A small app that loads user from https://reqres.in/ and displays it in a list
+
+- The app initially shows a pre-loader and loads a set of 10 users (Preloader will be shown for minimum of 3 seconds)
+- When scrolled down, it starts loading the next set of users till it reaches total users from https://reqres.in/ API
+- When you scroll down there is an indicator at the bottom of the list when it is loading
+
+# Setup
+
+- App is created using create react app
+- It uses Typescript
+- Prettier is used for linting and husy takes care of formatting when you commit code
+- Added some tests as well. Used jest and react testing library
 
 ## Available Scripts
 
@@ -16,8 +27,7 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs tests for all files
 
 ### `npm run build`
 
