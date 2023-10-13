@@ -14,14 +14,14 @@ type UserListProps = {
   users: UserListItemProps[]
   onScrollToBottom?: () => void
   showLoadingIndicator?: boolean
-  className: string
+  className?: string
 }
 
 export const UserList: FC<UserListProps> = ({
   users,
   showLoadingIndicator,
   onScrollToBottom = () => {},
-  className,
+  className = '',
 }) => {
   const onListScroll = (e: UIEvent<HTMLUListElement>) => {
     const currentTarget = e.currentTarget
@@ -58,7 +58,7 @@ export const UserListItem: FC<UserListItemProps> = ({ avatarURL, firstName, last
 
 const LoadingItem: FC = () => {
   return (
-    <li className="loading-item">
+    <li className="loading-item" role="progressbar">
       <div className="loading-item__dot"></div>
       <div className="loading-item__dot"></div>
       <div className="loading-item__dot"></div>

@@ -38,7 +38,6 @@ const UserListPage: FC<UserListPageProps> = ({ onPageLoaded = () => {}, classNam
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    console.log('useEffect')
     const fetchUsers = async () => {
       setUsers(await loadPage(1))
       setPagesLoaded(1)
@@ -58,7 +57,6 @@ const UserListPage: FC<UserListPageProps> = ({ onPageLoaded = () => {}, classNam
 
   // Once the list has scrolled to the bottom, load the next set of users
   const onScrollToBottom = useCallback(async () => {
-    console.log('onScrollToBottom')
     if (isLoading || users.length >= totalUsers) {
       return
     }
