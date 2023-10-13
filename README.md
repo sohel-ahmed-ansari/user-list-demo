@@ -1,6 +1,6 @@
 # User list demo
 
-A small app that loads user from https://reqres.in/ and displays it in a list
+A small app that loads users from https://reqres.in/ and displays it in a list
 
 - The app initially shows a pre-loader and loads a set of 10 users (Preloader will be shown for minimum of 3 seconds)
 - When scrolled down, it starts loading the next set of users till it reaches total users from https://reqres.in/ API
